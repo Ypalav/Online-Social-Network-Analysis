@@ -8,7 +8,11 @@ Jill Stein and Gary Johnson are more similar than Hillary Clinton and Donald
 Trump.
 
 How is this approach misleading? How might you fix it?
+Ans - The approach seems to be true but misleading in the sense that, all of the candidates are from different parties and have their own way of handling things
+and have their own plans if they win the election. 
+It's also that they differ from the behaviourial characteristics of each other. The people they follow might match but we can't tag them as similar.
 
+We can do more learning/analysis from their Twitter usage, to determine their behaviourial patterns which will certainly differentiate all the 4 of them.
 
 
 
@@ -23,6 +27,15 @@ do you think this user is followed by both Hilary Clinton and Donald Trump,
 who are rivals? Do some web searches to see if you can find out more
 information.
 
+Ans- Magic Johnson is the famous basketball legend, who played for LA lakers.
+After retiring from basketball, he started on being an entrepreneur, philanthropist, broadcaster and motivational speaker.
+Since then, he has become the most powerful African American man in business. 
+
+He has helped in creating job opportunities within communities, reshaping the corporate understanding of urban areas, thus enhancing social value.
+Since his contribution in the basketball and post retirement social work, he is been followed by both Hillary and Trump, 
+regardless of him supporting Hillary for president. 
+
+Along with him Trump also follows 3 more renowned sports persons. Who along with Johnson seem to be friends with Trump.
 
 
 
@@ -38,8 +51,10 @@ information.
 3. There is a big difference in how many accounts each candidate follows (Gary
 Johnson follows over 3K accounts, while Donald Trump follows less than
 50). Why do you think this is? How might that affect our analysis?
+Ans- If we check Trumps Twitter followers, he follows people mostly who are close to him or highly important to him and some sharing the same characteristics like him.
+On the other side, Gary Johnson is less ego centric than Trump, which makes him follow much more than Trump.
 
-
+This will make our graph analysis denser towards Gary Johnson side and thinly scattered on Trump's side.
 
 
 
@@ -55,3 +70,4 @@ https://dev.twitter.com/rest/reference/get/friends/ids, how many requests will
 we have to make? Given how Twitter does rate limiting
 (https://dev.twitter.com/rest/public/rate-limiting), approximately how many
 minutes will it take to collect this data?
+Ans - 
