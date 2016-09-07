@@ -238,9 +238,16 @@ def followed_by_hillary_and_donald(users, twitter):
         A string containing the single Twitter screen_name of the user
         that is followed by both Hillary Clinton and Donald Trump.
     """
-    request = robust_request(twitter, "users/lookup", {"user_id" : set(users[2]["friends"]) & set(users[3]["friends"])})
+    id_for_hillary_clinton=0
+    id_for_trump=0;
+    for user in range(len(users)):
+        if users[user]['screen_name'] == "HillaryClinton":
+            id_for_hillary_clinton=user
+        if users[user]['screen_name'] == "realDonaldTrump":
+            id_for_trump=user
+        
+    request = robust_request(twitter, "users/lookup", {"user_id" : set(users[id_for_hillary_clinton]["friends"]) & set(users[id_for_trump]["friends"])})
     return str([u['screen_name'] for u in request])
-
 
 def create_graph(users, friend_counts):
     """ Create a networkx undirected Graph, adding each candidate and friend
