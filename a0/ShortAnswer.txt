@@ -70,4 +70,6 @@ https://dev.twitter.com/rest/reference/get/friends/ids, how many requests will
 we have to make? Given how Twitter does rate limiting
 (https://dev.twitter.com/rest/public/rate-limiting), approximately how many
 minutes will it take to collect this data?
-Ans - 
+Ans - 4 api calls for 4 users + (4159 + 3124 + 748 + 42) friends for all the 4 users = 8077 api calls
+Twitter rate limit is 15 requests for every 15 min window.
+It will take approximately 8070 mins to complete the entire API request.
