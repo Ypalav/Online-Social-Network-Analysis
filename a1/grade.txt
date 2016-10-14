@@ -1,0 +1,51 @@
+Grade: 48.00/50.00
+
+2 Deduction(s):
+
+--------------
+#1: 1.00 points
+Failing test: test_complexity_2: 
+        @points=1
+        
+Traceback (most recent call last):
+  File "../assignments-sol/a1/a1_test.py", line 124, in test_complexity_2
+    self.assertTrue(y > x, 'complexity depends on number of nodes')
+AssertionError: False is not true : complexity depends on number of nodes
+
+source:
+    def test_complexity_2(self):
+         """
+         @points=1
+         """
+         x = complexity_of_bfs(1000, 500, 10)
+         y = complexity_of_bfs(1000, 1000, 10)
+         self.assertTrue(y is not None, 'nothing returned')
+         self.assertTrue(y > x, 'complexity depends on number of edges')
+         x = complexity_of_bfs(1000, 500, 10)
+         y = complexity_of_bfs(2000, 500, 10)
+         self.assertTrue(y > x, 'complexity depends on number of nodes')
+--------------
+
+--------------
+#2: 1.00 points
+Failing test: test_complexity_4: 
+        @points=1
+        
+Traceback (most recent call last):
+  File "../assignments-sol/a1/a1_test.py", line 143, in test_complexity_4
+    self.assertEqual(round(y - x, 0), 4000, 'additive')
+AssertionError: 0 != 4000 : additive
+
+source:
+    def test_complexity_4(self):
+         """
+         @points=1
+         """
+         x = complexity_of_bfs(2000, 500, 10)
+         y = complexity_of_bfs(6000, 500, 10)
+         self.assertEqual(round(y - x, 0), 4000, 'additive')
+         x = complexity_of_bfs(2000, 500, 10)
+         y = complexity_of_bfs(2000, 1500, 10)
+         self.assertEqual(round(y - x, 0), 1000, 'additive')
+--------------
+
