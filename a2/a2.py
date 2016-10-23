@@ -84,10 +84,10 @@ def tokenize(doc, keep_internal_punct=False):
           dtype='<U5')
     >>> tokenize("??necronomicon?? geträumte sünden.<br>Hi", True)
     array(['necronomicon', 'geträumte', 'sünden.<br>hi'],
-          dtype='<U13')
+        dtype='<U13')
     >>> tokenize("??necronomicon?? geträumte sünden.<br>Hi", False)
     array(['necronomicon', 'geträumte', 'sünden', 'br', 'hi'],
-          dtype='<U12')
+        dtype='<U12')
     """
     if keep_internal_punct == False:
         return np.array(re.sub('\W+', ' ', doc.lower()).split())
@@ -272,17 +272,11 @@ def vectorize(tokens_list, feature_fns, min_freq, vocab=None):
         return X, vocab
     else:
         feats = featurize_local()
-        for tokens in feats:
-            flag_ptr = 0
-            for token in tokens:
-                if token not in new_dict or flag_ptr == 0:
-                    new_dict[token[0]] += 1
-                    flag_ptr = 1
         k = 0
         new_feats = enumerate(feats)
         for keys, tokens in new_feats:
             for token in tokens:
-                if new_dict[token[0]] >= min_freq and token[0] in vocab:
+                if token[0] in vocab:
                     data_values.append(token[1])
                     row_index.append(k)
                     col_index.append(vocab[token[0]])
