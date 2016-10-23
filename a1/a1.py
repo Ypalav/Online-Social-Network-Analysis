@@ -106,8 +106,7 @@ def complexity_of_bfs(V, E, K):
     >>> type(v) == int or type(v) == float
     True
     """
-    return V+(E*K)
-    
+    return E
 
 
 def bottom_up(root, node2distances, node2num_paths, node2parents):
@@ -199,7 +198,7 @@ def is_approximation_always_right():
     >>> type(s)
     <class 'str'>
     """
-    return 'yes'
+    return 'no'
 
 
 def partition_girvan_newman(graph, max_depth):
