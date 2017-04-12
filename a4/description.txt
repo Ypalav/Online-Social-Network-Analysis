@@ -1,0 +1,37 @@
+DESCRIPTION
+
+Data Collection(collect.py)-
+
+The script reads in 200 tweets which mention @BarackObama in them using search/tweets api. From these tweets, 12 unique users
+are extracted and each of their's friends are extracted using friends/ids api with a max limit of 5000 friends. For the unique 12 users,
+200 tweets are extracted from their timeline's for 5 different pages.
+This is how total friends and total tweets are extracted. The script takes max 30 secs to run and the tweets and friends data are dumped
+in pickle object.
+
+Clustering(cluster.py)-
+
+The scripts reads in friends.pk1 file, creates a graph between parent node, 12 unique users and each of their friends.
+The edges are then reduced using Jaccard value of 0.2 and the new graph is passed to girvan_newman method, which gives communities
+by removing edges which have high betweenness values, which gives a clustered network.
+
+Classification(classify.py)-
+
+Lexicon approach is used to classify the tweets dumped in tweets_data.pkl file. AFINN library is used to provide the positive and negative
+sentiment of all the tweets. Each tweet is first tokenized, the tokens are then passed for afinn calculation, which checks the weight of all
+the tokens in its library, and multiplies -1 to the negative ones and provides a tuple weight of pos, neg score. This helps in assigning
+the tweet to either negative or positive class, whichever is higher. A list of positive and negative tweets is maintained.
+
+Summary(summary.py)-
+
+Reads all the output files of above scripts and creates summary.txt which has all the required analysis.
+
+Conclusions-
+
+-Jaccard scores are used, the highest similarity between parent Node and any node is 0.6. Hence, the graph is less denser.
+
+-Lexicon approach is used to classify the tweets, which just weighs using number of positive, negative words present in the AFINN library,
+as opposed to the Machine Learning approach which considers different scenarios like the sentence context, ignoring minimal occurence words,
+ignoring maximum occured words etc.
+
+
+

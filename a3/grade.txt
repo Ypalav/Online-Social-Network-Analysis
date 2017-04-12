@@ -1,0 +1,42 @@
+Grade: 42.00/50.00
+
+2 Deduction(s):
+
+--------------
+#1: 4.00 points
+Failing test: test_cosine_sim_1: 
+        @points=4
+        
+Traceback (most recent call last):
+  File "../assignments-sol/a3/a3_test.py", line 79, in test_cosine_sim_1
+    self.assertEqual(round(cosine_sim(csr_matrix([1,2,3]), csr_matrix([4,-5,6])), 2),
+TypeError: type matrix doesn't define __round__ method
+
+source:
+    def test_cosine_sim_1(self):
+         """
+         @points=4
+         """
+         self.assertEqual(round(cosine_sim(csr_matrix([1,2,3]), csr_matrix([4,-5,6])), 2),
+                          0.37)
+--------------
+
+--------------
+#2: 4.00 points
+Failing test: test_cosine_sim_2: 
+        @points=4
+        
+Traceback (most recent call last):
+  File "../assignments-sol/a3/a3_test.py", line 86, in test_cosine_sim_2
+    self.assertEqual(round(cosine_sim(csr_matrix([1,2,0]), csr_matrix([4,-5,6])), 2),
+TypeError: type matrix doesn't define __round__ method
+
+source:
+    def test_cosine_sim_2(self):
+         """
+         @points=4
+         """
+         self.assertEqual(round(cosine_sim(csr_matrix([1,2,0]), csr_matrix([4,-5,6])), 2),
+                          -0.31)
+--------------
+
